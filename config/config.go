@@ -10,7 +10,6 @@ import (
 
 type Config struct {
 	LogLevel            string `envconfig:"LOG_LEVEL"`
-	Debug               string `envconfig:"DEBUG"`
 	HTTPAddr            string `envconfig:"HTTP_ADDR"`
 	PgAddr              string `envconfig:"PG_ADDR"`
 	PgMigrationsPath    string `envconfig:"PG_MIGRATIONS_PATH"`
