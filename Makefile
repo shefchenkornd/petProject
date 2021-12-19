@@ -6,3 +6,6 @@ build:
 
 run:
 	cd cmd/api; ./rundev.sh
+
+#	for create migration
+#	migrate create -ext sql -dir store/mysql/migrations -seq create_users_table
