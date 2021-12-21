@@ -9,3 +9,7 @@ run:
 
 #	for create migration
 #	migrate create -ext sql -dir store/mysql/migrations -seq create_users_table
+
+
+# compile proto file
+# protoc --go_out=pkg api/grpc/person.proto
