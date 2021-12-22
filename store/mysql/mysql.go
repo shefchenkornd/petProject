@@ -7,11 +7,11 @@ import (
 	"petProject/config"
 )
 
-type Mysql struct {
+type MySQL struct {
 	*gorm.DB
 }
 
-func Dial() (*Mysql, error) {
+func Dial() (*MySQL, error) {
 	cfg := config.Get()
 	if cfg.MysqlDB == "" {
 		return nil, nil
@@ -23,5 +23,5 @@ func Dial() (*Mysql, error) {
 		return nil, err
 	}
 
-	return &Mysql{db}, nil
+	return &MySQL{db}, nil
 }
