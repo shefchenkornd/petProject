@@ -1,11 +1,25 @@
 syntax = "proto3";
 
-option go_package = "./";
+option go_package = "petProject/grpc";
 
 package api;
 
-message Person {
+service UserService {
+  rpc Add(AddPerson) returns (AddResponse) {}
+}
+
+message AddPerson {
   int32 id = 1;
   string name = 2;
   int32 age = 3;
+  SocialFollowers socialFollowers = 4;
+}
+
+message SocialFollowers {
+  int32 youtube = 1;
+  int32 twitter = 2;
+}
+
+message AddResponse {
+  bool success = 1;
 }
