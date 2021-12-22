@@ -1,5 +1,5 @@
 # REST API Server example
-<img alt="image this is gopher" src="/home/ilya/petProject/images/gopher.png" style="float: right"  />
+<img alt="image this is gopher" src="/images/gopher.png" style="float: right"  />
 
 This is Golang REST API Server including the following features:
 * based on framework Echo
