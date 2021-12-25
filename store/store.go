@@ -4,7 +4,6 @@ import (
 	"context"
 	"github.com/pkg/errors"
 	"log"
-	"petProject/config"
 	"petProject/logger"
 	"petProject/store/mysql"
 	"time"
@@ -21,8 +20,6 @@ type Store struct {
 
 // New creates new store
 func New(ctx context.Context) (*Store, error) {
-	cfg := config.Get()
-
 	// connect to MySQL
 	mysqlDB, err := mysql.Dial()
 	if err != nil {
@@ -59,7 +56,7 @@ func (store *Store) KeepAliveMySQL() {
 		lostConnect := false
 		if store.MySQL == nil {
 			lostConnect = true
-		} else if err = store.MySQL.DB.DB().Ping(); err != nil {
+		} else if db, err := store.MySQL.DB.DB(); err != nil || db.Ping() != nil {
 			lostConnect = true
 		}
 		if !lostConnect {
