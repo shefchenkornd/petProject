@@ -3,11 +3,12 @@ package service
 import (
 	"context"
 	"github.com/pkg/errors"
+	"petProject/store"
 )
 
 // Manager is just a collection of all services we have in the project
 type Manager struct {
-	User UserWebService
+	User *UserWebService
 }
 
 // NewManager creates new service manager
@@ -17,9 +18,6 @@ func NewManager(ctx context.Context, store *store.Store) (*Manager, error) {
 	}
 
 	return &Manager{
-		User: NewUserWebService{
-			ctx:   ctx,
-			store: store,
-		},
+		User: NewUserWebService(ctx, store),
 	}, nil
 }
