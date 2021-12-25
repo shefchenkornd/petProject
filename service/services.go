@@ -2,14 +2,17 @@ package service
 
 import (
 	"context"
+	"github.com/google/uuid"
 	"petProject/model"
 )
 
 // UserService is a service for users
 //go:generate mockery --dir . --name UserService --output ./mocks
 type UserService interface {
-	GetUser(ctx context.Context) (*model.User, error)
+	GetUser(ctx context.Context, uuid uuid.UUID) (*model.User, error)
 	CreateUser(ctx context.Context, user *model.User) (*model.User, error)
+	UpdateUser(ctx context.Context, user *model.User) (*model.User, error)
+	DeleteUser(ctx context.Context, uuid uuid.UUID) error
 }
 
 // For example
