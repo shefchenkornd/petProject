@@ -14,7 +14,6 @@ const KeepAlivePollPeriod = 3
 
 type Store struct {
 	MySQL *mysql.MySQL // for KeepAliveMySQL (see below)
-
 	User UserRepo
 }
 
