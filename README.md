@@ -14,3 +14,10 @@ This is Golang REST API Server including the following features:
 type in terminal `make run`
 
 URL [http://localhost:8080](http://localhost:8080)
+
+
+## TODO
+* обернуть в docker
+* сделать unit-tests
+* Postman json export
+* нужен ли .env файл?
