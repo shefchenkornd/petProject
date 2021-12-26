@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  mysql:
+    build:
+      context: ./deployments/docker/mysql
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+    volumes:
+      - ./persistent_data/mysql:/var/lib/mysql
+    container_name: gogol_mysql
