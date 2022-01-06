@@ -15,7 +15,7 @@ type in terminal `make run`
 
 URL [http://localhost:8080](http://localhost:8080)
 
-<img src="./images/make-run.png" alt="command 'make run">
+<img src="./images/make-run.png" alt="command 'make run'">
 
 
 ## TODO
