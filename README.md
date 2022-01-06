@@ -1,5 +1,4 @@
 # REST API Server example
-<img alt="image this is gopher" src="/images/gopher.png" style="float: right"  width="600" height="600"/>
 
 This is Golang REST API Server including the following features:
 * based on framework Echo
@@ -10,12 +9,12 @@ This is Golang REST API Server including the following features:
 * config based on envconfig
 * made with love :heart:
 
+![image this is gopher](./images/gopher.png)
+
 ## To start server
-type in terminal `make run`
+type in terminal `make run`. HTTP server is available at URL [http://localhost:8080](http://localhost:8080)
 
-URL [http://localhost:8080](http://localhost:8080)
-
-<img src="./images/make-run.png" alt="command 'make run'">
+![command `make run`](./images/make-run.png)
 
 
 ## TODO
