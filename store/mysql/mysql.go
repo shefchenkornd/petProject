@@ -17,6 +17,7 @@ func Dial() (*MySQL, error) {
 		return nil, nil
 	}
 
+	// dsn := "root:root@(mysql:3306)/pet_project?charset=utf8mb4&parseTime=True&loc=Local"
 	dsn := fmt.Sprintf("%s:%s@(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", cfg.MysqlUser, cfg.MysqlPassword, cfg.MysqlAddr, cfg.MysqlDB)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
