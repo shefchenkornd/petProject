@@ -24,7 +24,7 @@ func NewUserWebService(ctx context.Context, store *store.Store) *UserWebService 
 	}
 }
 
-//GetUser get user by ID
+// GetUser get user by ID
 func (s UserWebService) GetUser(ctx context.Context, userID uuid.UUID) (*model.User, error) {
 	userDB, err := s.store.User.GetUser(ctx, userID)
 	if err != nil {
