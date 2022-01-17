@@ -13,15 +13,3 @@ run:
 
 # compile proto file
 # protoc --go_out=pkg api/grpc/person.proto
-
-up:
-	sudo docker-compose up -d
-
-down:
-	sudo docker-compose down
-
-go:
-	sudo docker-compose exec app bash
-
-ps:
-	sudo docker ps

@@ -27,11 +27,10 @@ func NewUsers(ctx context.Context, service *service.Manager, logger *logger.Logg
 	}
 }
 
-
 func (c UserController) Get(ctx echo.Context) error {
 	id, err := uuid.Parse(ctx.Param("id"))
 	if err != nil {
-		return echo.NewHTTPError(http.StatusBadRequest, errors.Wrap(err, "could not decode user data"))
+		return echo.NewHTTPError(http.StatusUnauthorized, "could not decode user data")
 	}
 
 	user, err := c.services.User.GetUser(ctx.Request().Context(), id)

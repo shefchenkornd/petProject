@@ -48,6 +48,10 @@ func run() error {
 	// Initialize Echo instance
 	e := echo.New()
 
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Hello, World!")
+	})
+
 	// Disable Echo JSON logger in debug mode
 	if cfg.LogLevel == "debug" {
 		if l, ok := e.Logger.(*echoLog.Logger); ok {
@@ -60,10 +64,10 @@ func run() error {
 
 	// User routes
 	userRoutes := v1.Group("/users")
-	userRoutes.GET("/users/:id", userController.Get)
-	userRoutes.POST("/users", userController.Create)
-	userRoutes.PUT("/users/:id", userController.Update)
-	userRoutes.DELETE("/users/:id", userController.Delete)
+	userRoutes.GET("/:id", userController.Get)
+	userRoutes.POST("/", userController.Create)
+	userRoutes.PUT("/:id", userController.Update)
+	userRoutes.DELETE("/:id", userController.Delete)
 
 	s := &http.Server{
 		Addr:         cfg.HTTPAddr,
