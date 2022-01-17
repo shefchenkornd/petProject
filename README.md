@@ -18,7 +18,5 @@ type in terminal `make run`. HTTP server is available at URL [http://localhost:8
 
 
 ## TODO
-* обернуть в docker
 * сделать unit-tests
 * Postman json export
-* нужен ли .env файл?
