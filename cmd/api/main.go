@@ -44,6 +44,7 @@ func run() error {
 
 	// Init controllers
 	userController := controller.NewUsers(ctx, serviceManager, l)
+	importDataController := controller.NewImportDataController(ctx, serviceManager, l)
 
 	// Initialize Echo instance
 	e := echo.New()
@@ -60,7 +61,7 @@ func run() error {
 	}
 
 	// API V1
-	v1 := e.Group("/v1")
+	v1 := e.Group("/api/v1")
 
 	// User routes
 	userRoutes := v1.Group("/users")
@@ -68,6 +69,9 @@ func run() error {
 	userRoutes.POST("/", userController.Create)
 	userRoutes.PUT("/:id", userController.Update)
 	userRoutes.DELETE("/:id", userController.Delete)
+
+	// import Json API
+	v1.GET("/importData", importDataController.Import)
 
 	s := &http.Server{
 		Addr:         cfg.HTTPAddr,
